@@ -18,6 +18,7 @@ class Customer(models.Model):
   fullname = models.CharField(max_length=30)
   email = models.CharField(max_length=25, unique=True)
   address = models.ForeignKey(Address, on_delete=models.CASCADE)
+  created_at = models.DateTimeField(auto_now_add=True)
 
   def __str__(self) -> str:
-    return f'(Username: {self.username} Fullname: {self.fullname} email: {self.email} address: {self.address})'
+    return f'(Username: {self.username} Fullname: {self.fullname} email: {self.email} address: {self.address} created_at: {self.created_at})'
