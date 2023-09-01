@@ -14,7 +14,7 @@ class Address(models.Model):
 
 class Customer(models.Model):
   uuid = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-  username = models.CharField(max_length=10)
+  username = models.CharField(max_length=20)
   fullname = models.CharField(max_length=30)
   email = models.CharField(max_length=25, unique=True)
   address = models.ForeignKey(Address, on_delete=models.CASCADE)
